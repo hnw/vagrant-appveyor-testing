@@ -1,5 +1,5 @@
 version: '{build}-{branch}'
-os: Default Azure
+image: Visual Studio 2017
 platform:
   - x64
 # Maximum number of concurrent jobs for the project
@@ -15,7 +15,7 @@ init:
 install:
 - ps: |
     choco install virtualbox
-    choco install vagrant
+    choco install vagrant -version 1.9.6
     cd $env:APPVEYOR_BUILD_FOLDER
 - refreshenv
 - vagrant -v
@@ -27,7 +27,7 @@ build_script:
   - ps: Test-NetConnection google.com -Port 80
   - vagrant up
   - vagrant ssh -c "echo 'hello world!'"
-  - vagrant ssh -c "uname -a && cat /etc/*release*"
+  - vagrant ssh -c "uname -a"
 test: off
 
 # Uncomment below to enable debugging via RDP.
