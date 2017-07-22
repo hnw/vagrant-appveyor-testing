@@ -2,6 +2,7 @@
 # vi: set ft=ruby :
 
 Vagrant.configure("2") do |c|
+  c.ssh.shell = "bash -c 'BASH_ENV=/etc/profile exec bash'"
   #c.vm.box = "ubuntu/precise32"
   c.vm.box = "ubuntu/trusty32"
   #c.vm.box = "chef/ubuntu-14.04-i386"
