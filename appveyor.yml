@@ -15,7 +15,7 @@ init:
 install:
 - c:\msys64\usr\bin\pacman -Syuu --noconfirm
 - c:\msys64\usr\bin\pacman -Ss winpty
-- c:\msys64\usr\bin\pacman -S winpty-git
+- c:\msys64\usr\bin\pacman -S winpty
 - ps: |
     choco install virtualbox
     choco install vagrant
