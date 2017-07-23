@@ -23,14 +23,14 @@ install:
 - refreshenv
 - where winpty
 - where vagrant
-- vagrant.exe -v
+- winpty.exe vagrant.exe -v
 - VBoxManage -v
 - ssh -V
 - ipconfig /all
 
 build_script:
   - ps: Test-NetConnection google.com -Port 80
-  - vagrant.exe up
+  - winpty.exe vagrant.exe up
   - vagrant.exe ssh -c "echo 'hello world!'"
   - vagrant.exe ssh -c "uname -a && cat /etc/*release*"
 test: off
