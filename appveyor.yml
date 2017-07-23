@@ -14,8 +14,7 @@ init:
     }
 install:
 - ps: |
-    pacman -Suy
-    pacman -S winpty-git
+    choco install winpty
     choco install virtualbox
     choco install vagrant
     cd $env:APPVEYOR_BUILD_FOLDER
