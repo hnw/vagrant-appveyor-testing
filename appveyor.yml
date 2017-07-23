@@ -21,6 +21,7 @@ install:
     choco install vagrant
     cd $env:APPVEYOR_BUILD_FOLDER
 - refreshenv
+- where winpty
 - winpty vagrant -v
 - VBoxManage -v
 - ssh -V
