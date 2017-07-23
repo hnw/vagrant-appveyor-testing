@@ -13,9 +13,9 @@ init:
         Start-Sleep 1
     }
 install:
+- pacman -Suy
+- pacman -S winpty-git
 - ps: |
-    pacman -Suy
-    pacman -S winpty-git
     choco install virtualbox
     choco install vagrant
     cd $env:APPVEYOR_BUILD_FOLDER
