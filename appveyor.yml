@@ -22,7 +22,8 @@ install:
     cd $env:APPVEYOR_BUILD_FOLDER
 - refreshenv
 - where winpty
-- c:\msys64\usr\bin\winpty vagrant -v
+- where vagrant
+- ps: vagrant -v
 - VBoxManage -v
 - ssh -V
 - ipconfig /all
