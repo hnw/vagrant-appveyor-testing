@@ -13,7 +13,7 @@ init:
         Start-Sleep 1
     }
 install:
-- c:\msys64\usr\bin\pacman -Syuu
+- c:\msys64\usr\bin\pacman -Syuu --noconfirm
 - c:\msys64\usr\bin\pacman -S winpty-git
 - ps: |
     choco install virtualbox
