@@ -14,7 +14,7 @@ init:
     }
 install:
 - ps: |
-    choco install winpty
+    choco install cmder
     choco install virtualbox
     choco install vagrant
     cd $env:APPVEYOR_BUILD_FOLDER
