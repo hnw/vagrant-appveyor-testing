@@ -13,8 +13,8 @@ init:
         Start-Sleep 1
     }
 install:
-- c:\msys64\bin\pacman -Suy
-- c:\msys64\bin\pacman -S winpty-git
+- c:\msys64\usr\bin\pacman -Suy
+- c:\msys64\usr\bin\pacman -S winpty-git
 - ps: |
     choco install virtualbox
     choco install vagrant
