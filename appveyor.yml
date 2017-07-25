@@ -1,5 +1,5 @@
 version: '{build}-{branch}'
-image: Visual Studio 2015
+image: Visual Studio 2017
 platform:
   - x64
 # Maximum number of concurrent jobs for the project
