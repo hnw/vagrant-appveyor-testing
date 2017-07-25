@@ -18,8 +18,6 @@ install:
     choco install vagrant -version 1.9.6
     cd $env:APPVEYOR_BUILD_FOLDER
 - refreshenv
-- where winpty
-- where vagrant
 - vagrant -v
 - VBoxManage -v
 - ssh -V
@@ -29,7 +27,7 @@ build_script:
   - ps: Test-NetConnection google.com -Port 80
   - vagrant up
   - vagrant ssh -c "echo 'hello world!'"
-  - vagrant ssh -c "uname -a && cat /etc/*release*"
+  - vagrant ssh -c "uname -a"
 test: off
 
 # Uncomment below to enable debugging via RDP.
