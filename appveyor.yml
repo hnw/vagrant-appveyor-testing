@@ -13,26 +13,23 @@ init:
         Start-Sleep 1
     }
 install:
-- c:\msys64\usr\bin\pacman -Syuu --noconfirm
-- c:\msys64\usr\bin\pacman -Ss winpty
-- c:\msys64\usr\bin\pacman -S winpty --noconfirm
 - ps: |
     choco install virtualbox
-    choco install vagrant
+    choco install vagrant -version 1.9.6
     cd $env:APPVEYOR_BUILD_FOLDER
 - refreshenv
 - where winpty
 - where vagrant
-- winpty.exe vagrant.exe -v
+- vagrant -v
 - VBoxManage -v
 - ssh -V
 - ipconfig /all
 
 build_script:
   - ps: Test-NetConnection google.com -Port 80
-  - winpty.exe vagrant.exe up
-  - vagrant.exe ssh -c "echo 'hello world!'"
-  - vagrant.exe ssh -c "uname -a && cat /etc/*release*"
+  - vagrant up
+  - vagrant ssh -c "echo 'hello world!'"
+  - vagrant ssh -c "uname -a && cat /etc/*release*"
 test: off
 
 # Uncomment below to enable debugging via RDP.
