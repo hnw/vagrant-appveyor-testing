@@ -2,11 +2,6 @@
 # vi: set ft=ruby :
 
 Vagrant.configure("2") do |c|
-  c.vm.provision "fix-no-tty", type: "shell" do |s|
-    s.privileged = false
-    s.inline = "sudo sed -i '/tty/!s/mesg n/tty -s \\&\\& mesg n/' /root/.profile"
-  end
-
   #c.vm.box = "ubuntu/precise32"
   c.vm.box = "ubuntu/trusty32"
   #c.vm.box = "chef/ubuntu-14.04-i386"
