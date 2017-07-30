@@ -25,7 +25,7 @@ install:
 
 build_script:
   - ps: Test-NetConnection google.com -Port 80
-  - VAGRANT_LOG=DEBUG vagrant up
+  - vagrant up
   - vagrant ssh -c "echo 'hello world!'"
   - vagrant ssh -c "uname -a"
 test: off
