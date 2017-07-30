@@ -25,9 +25,9 @@ install:
 
 build_script:
   - ps: Test-NetConnection google.com -Port 80
-  - vagrant up
-  - vagrant ssh -c "echo 'hello world!'"
-  - vagrant ssh -c "uname -a"
+#  - vagrant up
+#  - vagrant ssh -c "echo 'hello world!'"
+#  - vagrant ssh -c "uname -a"
 test: off
 
 # Uncomment below to enable debugging via RDP.
